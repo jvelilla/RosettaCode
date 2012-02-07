@@ -4,18 +4,23 @@ note
 
 class
 	REPEAT_STRING_EXAMPLE
+
 create
 	make
-feature
+
+feature {NONE} -- Initialization
+
 	make
 		do
-			print("%NRepeat String%N")
-			repeat("ha",5)
-			print("%NRepeat Char%N")
-			repeat_char('a',5)
+			print ("%NRepeat String%N")
+			repeat ("ha", 5)
+			print ("%NRepeat Char%N")
+			repeat_char ('a', 5)
 		end
 
-	repeat (word:STRING; n: NATURAL)
+feature -- Access
+
+	repeat (word: STRING; n: NATURAL)
 		local
 			str : STRING
 		do

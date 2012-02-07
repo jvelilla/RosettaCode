@@ -9,23 +9,26 @@ class
 
 create
 	make
-feature
+
+feature {NONE} -- Intialization
+
 	make
 		do
-			across 1 |..| 10 as c loop  print (" " + funS(c.item).out) end
+			across 1 |..| 10 as c loop  print (" " + funS (c.item).out) end
 		end
 
+feature -- Access
 
-	funS(n:INTEGER):INTEGER
+	funS (n: INTEGER): INTEGER
 		do
-			if n=1 or n=2 then
-				Result := h(n) + 1
+			if n = 1 or n = 2 then
+				Result := h (n) + 1
 			else
-			    Result := h(n)
+			    Result := h (n)
 			end
 		end
 
-	h (n: INTEGER) : INTEGER
+	h (n: INTEGER): INTEGER
 		local
 			a: INTEGER
 		do
@@ -34,7 +37,7 @@ feature
 			elseif n = 2 then
 				Result := 3
 			else
-				Result := 2*h(n-1)-h(n-2)
+				Result := 2 * h (n-1) - h (n-2)
 			end
 		end
 end

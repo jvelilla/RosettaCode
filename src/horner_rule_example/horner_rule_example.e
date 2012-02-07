@@ -19,19 +19,21 @@ class
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 		local
-			l_coefficients: ARRAY[INTEGER]
+			l_coefficients: ARRAY [INTEGER]
 		do
-			l_coefficients :=<<-19, 7, -4, 6>>
-			print("Horner's rule polynomial evaluation: " + polynomial_evaluation(l_coefficients,3).out )
+			l_coefficients := <<-19, 7, -4, 6>>
+			print ("Horner's rule polynomial evaluation: " + polynomial_evaluation (l_coefficients, 3).out)
 		end
 
-	polynomial_evaluation (coefficients : ARRAY[INTEGER] ; x:INTEGER ) : INTEGER
+feature -- Access
+
+	polynomial_evaluation (coefficients: ARRAY [INTEGER]; x:INTEGER): INTEGER
 		require
-			valid_degree : coefficients.count = x + 1
+			valid_degree: coefficients.count = x + 1
 		local
 			i : INTEGER
 		do
@@ -39,12 +41,12 @@ feature
 				Result := 0
 				i := coefficients.count
 			until
-				i=0
+				i = 0
 			loop
 				Result := (Result * x) + coefficients[i]
 				i := i - 1
 			end
 		end
 
-end -- class HORNER_RULE_EXAMPLE
+end
 

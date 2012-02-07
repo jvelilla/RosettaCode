@@ -4,13 +4,15 @@ note
 
 class
 	SYMETRIC_DIFFERENCE_EXAMPLE
+
 create
 	make
-feature
+
+feature {NONE} -- Initialization
+
 	make
 		local
-			a,a1,b,b1: ARRAYED_SET[STRING]
-
+			a,a1,b,b1: ARRAYED_SET [STRING]
 		do
 			create a.make (4)
 			create b.make (4)
@@ -36,9 +38,8 @@ feature
 		    b.subtract (a)
 		    a1.merge (b)
 		    across a1 as c loop
-		    	print (" "+c.item)
+		    	print (" " + c.item)
 		    end
-
-
 		end
+
 end

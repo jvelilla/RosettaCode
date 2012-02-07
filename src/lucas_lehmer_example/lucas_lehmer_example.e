@@ -9,28 +9,31 @@
 
 class
 	LUCAS_LEHMER_EXAMPLE
+
 create
 	make
-feature
+
+feature {NONE} -- Initialization
+
 	make
 		do
 			across 2 |..| 200 as ic loop
-				if(create{PRIMES}).is_prime(ic.item) and is_mersenne_primer (ic.item) then
---					print(" " +ic.item.out)
+				if (create {PRIMES}).is_prime (ic.item) and is_mersenne_primer (ic.item) then
+					print(" " + ic.item.out)
 				end
 			end
 		end
 
 
-	is_mersenne_primer ( p: INTEGER) : BOOLEAN
+	is_mersenne_primer (p: INTEGER): BOOLEAN
 		local
-		  one: NATURAL_64
-		  zero : NATURAL_64
-		  two : NATURAL_64
-		  four : NATURAL_64
-		  mp : NATURAL_64
-		  s: NATURAL_64
-		  i: INTEGER
+			one: NATURAL_64
+			zero : NATURAL_64
+			two : NATURAL_64
+			four : NATURAL_64
+			mp : NATURAL_64
+			s: NATURAL_64
+			i: INTEGER
 		do
 			two.set_item (2)
 			four.set_item (4)
@@ -46,12 +49,11 @@ feature
 				until
 					i > p
 				loop
-					s :=s.product (s).minus (two).integer_remainder (mp)
+					s := s.product (s).minus (two).integer_remainder (mp)
 					i := i + 1
 				end
 				Result := (s = zero.zero)
 			end
 		end
-
 
 end

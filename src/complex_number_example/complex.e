@@ -8,7 +8,7 @@ create
 	make,
 	default_create
 
-feature {NONE}
+feature {NONE} -- Initialization
 
 	make (r, i: REAL_32)
 		do
@@ -16,7 +16,7 @@ feature {NONE}
 			imag := i
 		end
 
-feature
+feature -- Access
 
 	real: REAL_32
 
@@ -31,8 +31,10 @@ feature
 	zero: like Current
 			-- Neutral element for "+" and "-"
 		do
-			create Result.default_create
+			create Result
 		end
+
+feature -- Operations
 
 	plus alias "+" (other: like Current): like Current
 			-- Sum with `other' (commutative).
@@ -93,5 +95,5 @@ feature
 			Result := False
 		end
 
-end -- class COMPLEX
+end
 

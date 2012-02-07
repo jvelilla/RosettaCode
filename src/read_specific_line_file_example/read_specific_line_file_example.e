@@ -4,39 +4,49 @@ note
 
 class
 	READ_SPECIFIC_LINE_FILE_EXAMPLE
+
 create
 	make
-feature
+
+feature {NONE} -- Initialization
+
 	make
 		do
-			content_at (1)
+			print_content_at (1)
 			io.put_new_line
-			content_at (10)
+
+			print_content_at (10)
 			io.put_new_line
-			content_at (15)
+
+			print_content_at (15)
 		end
 
-	content_at (n:NATURAL)
+	print_content_at (n:NATURAL)
 		local
-			f : RAW_FILE
-			line : NATURAL
-		    content : STRING
+			f: RAW_FILE
+			line: NATURAL
+		    content: STRING
 		do
-			content := "The line ["+ n.out + "] does not exist!!!"
-			create f.make_open_read ("./src/read_specific_line.txt")
-			from
-				line := 1
-			until
-				line > n or f.end_of_file
-			loop
-				if line = n then
-					f.read_line
-					content := f.last_string
+			content := "The line [" + n.out + "] does not exist!!!"
+			create f.make ("src/read_specific_line.txt")
+			if f.exists and then f.is_readable then
+				f.open_read
+				from
+					line := 1
+				until
+					line > n or f.end_of_file
+				loop
+					if line = n then
+						f.read_line
+						content := f.last_string
+					end
+					f.next_line
+					line := line + 1
 				end
-				f.next_line
-				line :=line + 1
+				print ("%NThe content at line [:" + n.out +"] :%N" + content)
+				f.close
+			else
+				print ("Can not read file %"" + f.name + "%".%N")
 			end
-			print ("%NThe content at line [:" + n.out +"] :%N"+content)
-			f.close
 		end
 end
