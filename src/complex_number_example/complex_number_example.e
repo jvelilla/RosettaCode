@@ -4,11 +4,15 @@ note
 	comment: "[
 		Code base on Helmut Brandl tutorial http://tecomp.sourceforge.net/index.php?file=doc/lang/tutorial.txt
 		]"
+
 class
 	COMPLEX_NUMBER_EXAMPLE
+
 create
 	make
-feature
+
+feature {NONE} -- Initialization
+
 	make
 		local
 			a: COMPLEX
@@ -16,13 +20,13 @@ feature
 		do
 			create a.make (1, 1)
 			create b.make (3.14159, 1.25)
-			print("%Na:"+ a.out)
-			print("%Nb:"+ b.out)
-			print("%Na+b:" +(a+b).out)
-			print("%Na*b:" +(a*b).out)
-			print("%Nb/a:" +(b/a).out)
-			print("%Na-b:" +(a-b).out)
-			print("%N-a:" +(-a).out)
+			print("%Na:" + a.out)
+			print("%Nb:" + b.out)
+			print("%Na+b:" + (a+b).out)
+			print("%Na*b:" + (a*b).out)
+			print("%Nb/a:" + (b/a).out)
+			print("%Na-b:" + (a-b).out)
+			print("%N-a:" + (-a).out)
 		end
 
 end

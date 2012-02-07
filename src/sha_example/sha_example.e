@@ -4,11 +4,15 @@ note
 	comment : "This example depends on encryption lib, under contrib\library\text\"
 class
 	SHA_EXAMPLE
-	inherit
+
+inherit
 	ARRAY_FACILITIES
+
 create
 	make
-feature
+
+feature {NONE} -- Initialization
+
 	make
 		local
 			s : SHA1
@@ -25,6 +29,6 @@ feature
 			str.append (as_natural_32_be (output, 12).to_hex_string)
 			str.append (as_natural_32_be (output, 16).to_hex_string)
 			str.to_lower
-			print("%N"+str)
+			print("%N" + str)
 		end
 end

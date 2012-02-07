@@ -6,13 +6,14 @@ note
 		If other objects represent "true" or "false" in conditionals, note it.
 	]"
 	comments: " Only one BOOLEAN class,that can only be either True or False."
+
 class
 	BOOLEAN_EXAMPLE
 
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 		local
@@ -27,5 +28,5 @@ feature
 			end
 		end
 
-end -- class BOOLEAN_EXAMPLE
+end
 
