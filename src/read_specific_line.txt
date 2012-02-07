@@ -1,0 +1,12 @@
+Eiffel is the most complete object-oriented language around. 
+It is a simple complex language. Isn’t that an oxymoron? 
+Yes, but in Eiffel’s case the simplicity of learning the language 
+itself might conclude some to believe it is only a basic language, 
+or as some would disparagingly say a teaching language. 
+This is far from the truth, since Eiffel supports the most sophisticated 
+software development methods. 
+It is a complete philosophy of programming - 
+that philosophy getting out of the way so that you can program. 
+It minimizes the importance of things that are not so important in software development 
+and put the things that are important at the top in other words everything is put in 
+its place other languages are just used for coding.
