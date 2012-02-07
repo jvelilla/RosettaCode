@@ -31,6 +31,7 @@ feature
 	zero: like Current
 			-- Neutral element for "+" and "-"
 		do
+			create Result.default_create
 		end
 
 	plus alias "+" (other: like Current): like Current
