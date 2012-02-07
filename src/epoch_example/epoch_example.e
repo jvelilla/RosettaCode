@@ -13,14 +13,17 @@ note
 
 class
 	EPOCH_EXAMPLE
+
 create
 	make
-feature
+
+feature {NONE} -- Initialization
+
 	make
 		local
 			dt : DATE_TIME
 		do
 			create dt.make_from_epoch (0)
-			print(dt.out)
+			print (dt.out)
 		end
 end
