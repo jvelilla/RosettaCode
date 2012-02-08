@@ -49,6 +49,13 @@ feature {NONE} -- Initialization
 
 			print ("%N%NExecute {SYMETRIC_DIFFERENCE_EXAMPLE} ...%N")
 			create {SYMETRIC_DIFFERENCE_EXAMPLE} any.make
+
+			print ("%N%NExecute {MUTUAL_RECURSION_EXAMPLE} ...%N")
+			create {MUTUAL_RECURSION_EXAMPLE} any.make
+
+			print ("%N%NExecute {SUM_OF_SQUARES_EXAMPLE} ...%N")
+			create {SUM_OF_SQUARES_EXAMPLE} any.make
+
 		end
 
 end

@@ -78,4 +78,12 @@
 		<root class="REPEAT_STRING_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
+	<target name="sumofsquares" extends="example">
+		<root class="SUM_OF_SQUARES_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="mutualrecursion" extends="example">
+		<root class="MUTUAL_RECURSION_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
 </system>
