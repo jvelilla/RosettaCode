@@ -23,7 +23,7 @@ feature {NONE} -- Initialization
 			print("%N Using the multiply feature from the class STRING")
 			str := "ce"
 			str.multiply (5)
-
+			print ("%N"+str)
 		end
 
 feature -- Access
