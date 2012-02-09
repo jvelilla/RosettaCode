@@ -11,11 +11,19 @@ create
 feature {NONE} -- Initialization
 
 	make
+		local
+			str : STRING
 		do
+			print("%N Custom Implementation")
 			print ("%NRepeat String%N")
 			repeat ("ha", 5)
 			print ("%NRepeat Char%N")
 			repeat_char ('a', 5)
+
+			print("%N Using the multiply feature from the class STRING")
+			str := "ce"
+			str.multiply (5)
+
 		end
 
 feature -- Access

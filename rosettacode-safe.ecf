@@ -86,4 +86,12 @@
 		<root class="MUTUAL_RECURSION_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
+	<target name="queuedefinition" extends="example">
+		<root class="QUEUE_DEFINITION_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="substring" extends="example">
+		<root class="SUBSTRING_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
 </system>
