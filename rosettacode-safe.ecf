@@ -15,11 +15,10 @@
 	</target>
 	<target name="all_examples" extends="example">
 		<root class="ALL_EXAMPLES" feature="make"/>
-		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
 		<library name="eel" location="$ISE_LIBRARY\contrib\library\text\encryption\eel\eel-safe.ecf"/>
+		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
-
 	<target name="boolean" extends="example">
 		<root class="BOOLEAN_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
@@ -92,6 +91,19 @@
 	</target>
 	<target name="substring" extends="example">
 		<root class="SUBSTRING_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="leapyear" extends="example">
+		<root class="LEAP_YEAR_EXAMPLE" feature="make"/>
+		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="tokenizestring" extends="example">
+		<root class="TOKENIZE_STRING_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="stringcase" extends="example">
+		<root class="STRING_CASE_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 </system>
