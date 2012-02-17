@@ -106,4 +106,20 @@
 		<root class="STRING_CASE_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
+	<target name="evenodd" extends="example">
+		<root class="EVEN_ODD_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="gcd" extends="example">
+		<root class="GCD_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="doors" extends="example">
+		<root class="DOORS_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="formatednumber" extends="example">
+		<root class="FORMATED_NUMERIC_OUTPUT_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
 </system>

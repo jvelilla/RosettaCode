@@ -5,7 +5,7 @@ note
 	revision: "$Revision$"
 
 class
-	FORMATED_NUMERIC_OUTPUT
+	FORMATED_NUMERIC_OUTPUT_EXAMPLE
 
 create
 	make
