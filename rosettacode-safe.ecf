@@ -122,4 +122,8 @@
 		<root class="FORMATED_NUMERIC_OUTPUT_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
+	<target name="setexample" extends="example">
+		<root class="SET_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
 </system>

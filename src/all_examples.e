@@ -80,7 +80,8 @@ feature {NONE} -- Initialization
 			print ("%N%NExecute FORMATED_NUMERIC_OUTPUT_EXAMPLE ...%N")
 			create {FORMATED_NUMERIC_OUTPUT_EXAMPLE} any.make
 
-
+			print ("%N%NExecute SET_EXAMPLE ...%N")
+			create {SET_EXAMPLE} any.make
 		end
 
 end
