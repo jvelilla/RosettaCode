@@ -126,4 +126,13 @@
 		<root class="SET_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
+	<target name="readfilelinebyline" extends="example">
+		<root class="READ_FILE_LINE_BY_LINE_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="environmentvariable" extends="example">
+		<root class="ENVIRONMENT_VARIABLES_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+
 </system>

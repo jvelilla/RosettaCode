@@ -82,6 +82,15 @@ feature {NONE} -- Initialization
 
 			print ("%N%NExecute SET_EXAMPLE ...%N")
 			create {SET_EXAMPLE} any.make
+
+
+			print ("%N%NExecute READ_FILE_LINE_BY_LINE_EXAMPLE ...%N")
+			create {READ_FILE_LINE_BY_LINE_EXAMPLE} any.make
+
+
+			print ("%N%NExecute {ENVIRONMENT_VARIABLES_EXAMPLE} ...%N")
+			create {ENVIRONMENT_VARIABLES_EXAMPLE} any.make
+
 		end
 
 end
