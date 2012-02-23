@@ -17,7 +17,7 @@ feature {NONE} -- Initialization
 
 	make
 		do
-			across 2 |..| 200 as ic loop
+			across 2 |..| 60 as ic loop
 				if (create {PRIMES}).is_prime (ic.item) and is_mersenne_primer (ic.item) then
 					print(" " + ic.item.out)
 				end

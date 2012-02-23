@@ -1,9 +1,6 @@
 note
 	description: "Summary description for {ENVIRONMENT_VARIABLES_EXAMPLE}."
-	author: ""
-	date: "$Date$"
-	revision: "$Revision$"
-
+	uri :"http://rosettacode.org/wiki/Environment_variables#Eiffel"
 class
 	ENVIRONMENT_VARIABLES_EXAMPLE
 inherit

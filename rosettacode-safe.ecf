@@ -134,5 +134,22 @@
 		<root class="ENVIRONMENT_VARIABLES_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
+	<target name="arithmeticmean" extends="example">
+		<root class="ARITHMETIC_MEAN_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="funtiondefinition" extends="example">
+		<root class="FUNCTION_DEFINITION_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="readentirefile" extends="example">
+		<root class="READ_ENTIRE_FILE_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="stripsetcharsstring" extends="example">
+		<root class="STRIP_CHARACTERS_STRING_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+
 
 </system>

@@ -61,8 +61,6 @@ feature
 					value := n
 				invariant
 					gcd(Result, value) = gcd(m, n)
-				variant
-					Result.max(value)
 				until
 					Result = value
 				loop
@@ -71,6 +69,8 @@ feature
 					else
 						value := value - Result
 					end
+				variant
+					Result.max(value)
 				end
 			else
 				Result := m.max (n)

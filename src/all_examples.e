@@ -91,6 +91,22 @@ feature {NONE} -- Initialization
 			print ("%N%NExecute {ENVIRONMENT_VARIABLES_EXAMPLE} ...%N")
 			create {ENVIRONMENT_VARIABLES_EXAMPLE} any.make
 
+
+			print ("%N%NExecute {ARITHMETIC_MEAN_EXAMPLE} ...%N")
+			create {ARITHMETIC_MEAN_EXAMPLE} any.make
+
+			print ("%N%NExecute {FUNCTION_DEFINITION_EXAMPLE} ...%N")
+			create {FUNCTION_DEFINITION_EXAMPLE} any.make
+
+			print ("%N%NExecute {DOORS_EXAMPLE} ...%N")
+			create {DOORS_EXAMPLE} any.make
+
+			print ("%N%NExecute {READ_ENTIRE_FILE_EXAMPLE} ...%N")
+			create {READ_ENTIRE_FILE_EXAMPLE} any.make
+
+			print ("%N%NExecute {STRIP_CHARACTERS_STRING_EXAMPLE} ...%N")
+			create {STRIP_CHARACTERS_STRING_EXAMPLE} any.make
+
 		end
 
 end
