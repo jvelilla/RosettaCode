@@ -107,6 +107,9 @@ feature {NONE} -- Initialization
 			print ("%N%NExecute {STRIP_CHARACTERS_STRING_EXAMPLE} ...%N")
 			create {STRIP_CHARACTERS_STRING_EXAMPLE} any.make
 
+			print ("%N%NExecute {HAMMING_NUMBERS_EXAMPLE} ...%N")
+			create {HAMMING_NUMBERS} any.make
+
 		end
 
 end

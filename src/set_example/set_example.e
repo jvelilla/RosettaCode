@@ -130,9 +130,9 @@ feature
 		-- If A ⊆ B, but A ≠ B, then A is called a true or proper subset of B, written A ⊂ B or A ⊊ B
 		do
 			if a.is_subset (b) and then (not a.is_equal (b)) then
-				print ("%NA ⊂ B : True")
+				print ("%N A is a proper subset of  B : True")
 			else
-				print ("%NA ⊂ B : False")
+				print ("%N A is a proper subset of  B : False")
 			end
 		end
 
