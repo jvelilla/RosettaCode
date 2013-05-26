@@ -23,6 +23,14 @@
 		<root class="BOOLEAN_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
+	<target name="dot_product" extends="example">
+		<root class="DOT_PRODUCT_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="factorial" extends="example">
+		<root class="FACTORIAL_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
 	<target name="horners" extends="example">
 		<root class="HORNER_RULE_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
@@ -61,8 +69,11 @@
 		<library name="eel" location="$ISE_LIBRARY\contrib\library\text\encryption\eel\eel-safe.ecf"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
+	<target name="sudoku" extends="example">
+		<root class="SUDOKU_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
 	<target name="ackerman" extends="example">
-		<root class="ACKERMAN_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="symetric" extends="example">
@@ -150,6 +161,12 @@
 		<root class="STRIP_CHARACTERS_STRING_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
-
-
+	<target name="sum_of_series" extends="example">
+		<root class="SUM_OF_SERIES" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="void_value" extends="example">
+		<root class="VOID_VALUE_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
 </system>
