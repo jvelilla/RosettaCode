@@ -1,12 +1,16 @@
-class ALL_EXAMPLES
+class
+	ALL_EXAMPLES
+
+inherit
+	ARGUMENTS
 
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make
-		-- Run all examples
+			-- Run all examples
 		local
 			any: ANY
 		do
@@ -95,9 +99,6 @@ feature {NONE} -- Initialization
 			print ("%N%NExecute {ARITHMETIC_MEAN_EXAMPLE} ...%N")
 			create {ARITHMETIC_MEAN_EXAMPLE} any.make
 
-			print ("%N%NExecute {FUNCTION_DEFINITION_EXAMPLE} ...%N")
-			create {FUNCTION_DEFINITION_EXAMPLE} any.make
-
 			print ("%N%NExecute {DOORS_EXAMPLE} ...%N")
 			create {DOORS_EXAMPLE} any.make
 
@@ -110,6 +111,20 @@ feature {NONE} -- Initialization
 			print ("%N%NExecute {HAMMING_NUMBERS_EXAMPLE} ...%N")
 			create {HAMMING_NUMBERS} any.make
 
+			print ("%N%NExecute {DOT_PRODUCT_EXAMPLE} ...%N")
+			create {DOT_PRODUCT_EXAMPLE} any.make
+
+			print ("%N%NExecute VOID_VALUE_EXAMPLE ...%N")
+			create {VOID_VALUE_EXAMPLE} any.make
+
+			print ("%N%NExecute SUM_OF_SERIES_EXAMPLE ...%N")
+			create {SUM_OF_SERIES_EXAMPLE} any.make
+
+			print ("%N%NExecute FACTORIAL_EXAMPLE ...%N")
+			create {FACTORIAL_EXAMPLE} any.make
+
+			print ("%N%NExecute SUDOKU_EXAMPLE ...%N")
+			create {SUDOKU_EXAMPLE} any.make
 		end
 
 end
