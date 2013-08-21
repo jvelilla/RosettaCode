@@ -1,5 +1,5 @@
 note
-	description: "Example of Ackerman function"
+	description: "Compute the n-th term of a series"
 	URI: "http://rosettacode.org/wiki/Ackermann_function"
 
 class
@@ -27,15 +27,15 @@ feature {NONE} -- Initialization
 
 feature -- Access
 
-	ackerman (m: NATURAL; n: NATURAL): NATURAL
+	ackerman (m, n: like ackerman): NATURAL
 		do
 			if m = 0 then
 				Result := n + 1
-			elseif m > 0 and n = 0 then
+			elseif n = 0 then
 				Result := ackerman (m - 1, 1)
-			elseif m > 0 and n > 0 then
+			else
 				Result := ackerman (m - 1, ackerman (m, n - 1))
 			end
 		end
-		
+
 end
