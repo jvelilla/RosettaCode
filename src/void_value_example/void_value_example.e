@@ -11,32 +11,33 @@ create
 feature {NONE} -- Initialization
 
 	make
+			-- Run example
 		local
-			a_local: detachable ANY
+			l_any: detachable ANY
 		do
-			a_local := Void
-				-- type of 'x' must be detachable
-				-- default value of detachable type is Void
+			-- Default value of detachable type is Void,
+			-- therefore 'l_any' is Void
 
 			-- Void-safe call for local variables
-			if a_local /= Void then
-				-- call a_local.f
+			if l_any /= Void then
+				l_any.do_nothing
 			end
 
-			if attached a_local then
-				-- call a_local.f
+			if attached l_any then
+				l_any.do_nothing
 			else
-				print ("%N a_local is void")
+				print ("%N l_any is void")
 			end
 
-			-- Void-safe call for local variables and attributes
-			if attached a_property as x then
-				-- call x.f
+			-- Void-safe call for locals and attributes
+			if attached field as l_property then
+				l_property.do_nothing
 			end
 		end
 
 feature
 
-	a_property: detachable ANY
+	field: detachable ANY
+			-- an attribute
 
 end
