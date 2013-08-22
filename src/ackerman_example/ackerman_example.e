@@ -27,7 +27,7 @@ feature {NONE} -- Initialization
 
 feature -- Access
 
-	ackerman (m, n: like ackerman): NATURAL
+	ackerman (m, n: NATURAL): NATURAL
 		do
 			if m = 0 then
 				Result := n + 1
