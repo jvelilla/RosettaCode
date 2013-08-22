@@ -125,6 +125,9 @@ feature -- Initialization
 
 			print ("%N%NExecute SUDOKU_EXAMPLE ...%N")
 			create {SUDOKU_EXAMPLE} any.make
+
+			print ("%N%NExecute HAILSTONE_SEQUENCE_EXAMPLE ...%N")
+			create {HAILSTONE_SEQUENCE_EXAMPLE} any.make
 		end
 
 end

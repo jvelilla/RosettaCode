@@ -77,8 +77,6 @@ feature -- Status Report
 			valid_value (v)
 			valid_row (row)
 			valid_column (column)
-		local
-			sub_grid_lower_row, sub_grid_lower_column: like row
 		do
 			Result := not (subgrid_has (v, row, column) or row_has (v, row) or column_has (v, column))
 		end

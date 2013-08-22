@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-9-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-9-0 http://www.eiffel.com/developers/xml/configuration-1-9-0.xsd" name="rosettacode" uuid="07917FA5-3FE7-4C0A-A4D8-EF680213B19B">
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-11-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-11-0 http://www.eiffel.com/developers/xml/configuration-1-11-0.xsd" name="rosettacode" uuid="07917FA5-3FE7-4C0A-A4D8-EF680213B19B">
 	<target name="example">
 		<file_rule>
 			<exclude>/.git$</exclude>
@@ -7,9 +7,10 @@
 			<exclude>/CVS$</exclude>
 			<exclude>/.svn$</exclude>
 		</file_rule>
-		<option warning="true" full_class_checking="true" is_attached_by_default="true" void_safety="all" syntax="standard">
+		<option warning="true" full_class_checking="true" is_attached_by_default="true" void_safety="transitional" syntax="standard">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
+		<setting name="enforce_unique_class_names" value="true"/>
 		<precompile name="base_pre" location="$ISE_PRECOMP\base-safe.ecf"/>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 	</target>
@@ -17,7 +18,8 @@
 		<root class="ALL_EXAMPLES" feature="make"/>
 		<library name="eel" location="$ISE_LIBRARY\contrib\library\text\encryption\eel\eel-safe.ecf"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
-		<cluster name="src" location=".\src\" recursive="true"/>
+		<cluster name="src" location=".\src\" recursive="true">
+		</cluster>
 	</target>
 	<target name="boolean" extends="example">
 		<root class="BOOLEAN_EXAMPLE" feature="make"/>
@@ -29,6 +31,10 @@
 	</target>
 	<target name="factorial" extends="example">
 		<root class="FACTORIAL_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="hailstone_sequence_example" extends="example">
+		<root class="HAILSTONE_SEQUENCE_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="horners" extends="example">

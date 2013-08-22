@@ -19,7 +19,7 @@ feature {NONE} -- Initialization
 			-- Version 1, read all the content to Memory
 			-- Other option, read the content by line
 
-			create f.make ("src/read_specific_line.txt")
+			create f.make_with_name ("src/read_specific_line.txt")
 			if f.exists and then f.is_readable then
 				f.open_read
 				f.read_stream (f.count)

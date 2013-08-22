@@ -7,9 +7,10 @@ class
 create
 	make
 feature -- Initialization
+
 	make
 		local
-			i : INTEGER
+			i: INTEGER
 		do
 			print ("%NExample is_even using mod")
 			across 1 |..| 20 as it loop
@@ -25,23 +26,26 @@ feature -- Initialization
 			across 1 |..| 20 as it loop
 				i := it.item
 				if i.bit_and (1) = 0 then
-					print ("%N" +i.out + " is even")
+					print ("%N" + i.out + " is even")
 				elseif i.bit_and (1) = 1 then
-					print ("%N" +i.out + " is odd")
+					print ("%N" + i.out + " is odd")
 				end
 			end
 
 		end
 
-	is_even ( i: INTEGER) : BOOLEAN
-		-- is `i' even?
+feature -- Other
+
+	is_even (i: INTEGER): BOOLEAN
+			-- is `i' even?
 		do
 			Result := (i \\ 2) = 0
 		end
 
-	is_odd ( i: INTEGER) : BOOLEAN
-		-- is `i' odd?
+	is_odd (i: INTEGER): BOOLEAN
+			-- is `i' odd?
 		do
 			Result := (i \\ 2) = 1
 		end
+
 end
