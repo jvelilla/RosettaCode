@@ -1,14 +1,20 @@
 note
 	description: "Summary description for {ENVIRONMENT_VARIABLES_EXAMPLE}."
-	uri :"http://rosettacode.org/wiki/Environment_variables#Eiffel"
+	EIS: "name=Environment Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Environment_variables", "tag=requirement"
+
 class
 	ENVIRONMENT_VARIABLES_EXAMPLE
+
 inherit
     EXECUTION_ENVIRONMENT
+
 create
     make
-feature {NONE} -- Initialization
+
+feature -- Initialization
+
     make
+    		-- Run example.
         do
         	print("%N ----------- Get all environment variables -------------------")
         	retrive_all
@@ -16,8 +22,9 @@ feature {NONE} -- Initialization
 			retrive
         	print("%N ----------- Create and retrueve an environment variable-------------------")
 			create_retrieve
-
         end
+
+feature {NONE} -- Other
 
 	retrive_all
 		   -- Retrieve and print each environment variable property and value

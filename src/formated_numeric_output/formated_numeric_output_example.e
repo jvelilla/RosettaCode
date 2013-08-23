@@ -1,8 +1,6 @@
 note
 	description: "Example Formated numeric ode"
-	uri: "http://rosettacode.org/wiki/Formatted_numeric_output#Eiffel"
-	date: "$Date$"
-	revision: "$Revision$"
+	EIS: "name=Formated Numeric Output Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Formatted_numeric_output", "tag=requirement"
 
 class
 	FORMATED_NUMERIC_OUTPUT_EXAMPLE
@@ -13,7 +11,7 @@ create
 feature {NONE} -- Initialization
 
 	make
-			-- Run application.
+			-- Run example.
 		do
 			print_formatted_std (7.125)
 		end

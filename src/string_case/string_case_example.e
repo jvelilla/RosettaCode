@@ -5,23 +5,26 @@ note
 		Show any additional case conversion functions (e.g. swapping case, capitalizing the first letter, etc.) 
 		that may be included in the library of your language.
 	]"
-	URI:"http://rosettacode.org/wiki/String_case"
+	EIS: "name=String Case Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/String_case", "tag=requirement"
 
 class
 	STRING_CASE_EXAMPLE
+
 create
 	make
-feature
-	make
-		local
-			str : STRING
-		do
 
+feature -- Initialization
+
+	make
+			-- Run example.
+		local
+			str: STRING
+		do
 			str := "alphaBETA"
 			print ("%NConvert string to upper case:" + str)
 			str.to_upper
-			print("%NUpper Case:" +  str)
+			print ("%NUpper Case:" +  str)
 			str.to_lower
-			print("%NLower Case:" +  str)
+			print ("%NLower Case:" +  str)
 		end
 end

@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {HOFSTADTER_SEQUENCE_EXAMPLE}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -10,11 +9,14 @@ class
 create
 	make
 
-feature {NONE} -- Intialization
+feature -- Intialization
 
 	make
+			-- Run example.
 		do
-			across 1 |..| 10 as c loop  print (" " + funS (c.item).out) end
+			across 1 |..| 10 as c loop
+				print (" " + funS (c.item).out)
+			end
 		end
 
 feature -- Access
@@ -40,4 +42,5 @@ feature -- Access
 				Result := 2 * h (n-1) - h (n-2)
 			end
 		end
+
 end

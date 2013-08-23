@@ -1,5 +1,6 @@
 note
-	description : "Initial part, in order, of the sequence of Hamming numbers, also known as regular numbers"
+	description    : "Initial part, in order, of the sequence of Hamming numbers, also known as regular numbers"
+	EIS            : "name=Hamming Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Hamming_numbers", "tag=requirement"
 	arithmetic     : "[
 			   This version avoids integer overflow and stops at the last representable number in the sequence.
 		         ]"
@@ -26,7 +27,6 @@ note
 class
 	HAMMING_NUMBERS
 
-
 create
 	make
 
@@ -35,14 +35,14 @@ feature {NONE} -- Initialization
 	make
 			-- Print first 20 Hamming numbers, in order, and the 1691-st one.
 		local
-			Hammings: like hamming
+			l_hamming: like hamming
 				-- List of Hamming numbers, up to 1691-st one.
 		do
-			Hammings := hamming (1691)
+			l_hamming := hamming (1691)
 			across 1 |..| 20 as i loop
-				io.put_natural (Hammings.i_th (i.item)); io.put_new_line
+				io.put_natural (l_hamming.i_th (i.item)); io.put_new_line
 			end
-			io.put_natural (Hammings.i_th (1691)); io.put_new_line
+			io.put_natural (l_hamming.i_th (1691)); io.put_new_line
 		end
 
 feature -- Basic operations

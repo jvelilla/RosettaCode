@@ -1,6 +1,6 @@
 note
 	description: "Scalar product bewteen two vectors."
-	uri: "http://rosettacode.org/wiki/Dot_product"
+	EIS: "name=Scalar Product Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Dot_product", "tag=requirement"
 	author: "Victorien ELVINGER"
 
 class
@@ -9,10 +9,10 @@ class
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make
-			-- Run example
+			-- Run example.
 		local
 			u, v: ARRAY [REAL]
 		do

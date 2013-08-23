@@ -1,41 +1,41 @@
 note
-	description: "Summary description for {DOOR}."
-	author: ""
+	description: "Represents a door"
 	date: "$Date$"
 	revision: "$Revision$"
 
 class
 	DOOR
-	-- Represents a door
 
 create
-	make
+	make_closed
 
-feature -- initialization
+feature {NONE} -- initialization
 
-	make (addr: INTEGER; status: BOOLEAN)
-		-- create door with address and status
+	make_closed (a_address: INTEGER)
+			-- Create a closed door with 'a_address' as address.
 		do
-			address := addr
-			open := status
+			address := a_address
 		ensure
-			address_set: address = addr
-			status_set: open = status
+			address_effect: address = a_address
+			is_open_effect: is_open = False
 		end
 
 feature -- access
 
 	address: INTEGER
+			-- Door address
 
-	open: BOOLEAN assign set_open
+	is_open: BOOLEAN
+			-- Door status
 
 feature -- mutators
 
-	set_open (status: BOOLEAN)
+	toggle
+			-- toggle the door
 		do
-			open := status
+			is_open := not is_open
 		ensure
-			open_updated: open = status
+			is_open_effect: is_open = not old is_open
 		end
 
 end

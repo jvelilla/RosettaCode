@@ -1,9 +1,7 @@
 note
 	description: "RosettaCode Arithmetic Complex Numbers"
-	uri: "http://rosettacode.org/wiki/Arithmetic/Complex"
-	comment: "[
-		Code base on Helmut Brandl tutorial http://tecomp.sourceforge.net/index.php?file=doc/lang/tutorial.txt
-		]"
+	EIS: "name=Complex Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Arithmetic/Complex", "tag=requirement"
+	comment: "Code base on Helmut Brandl tutorial http://tecomp.sourceforge.net/index.php?file=doc/lang/tutorial.txt"
 
 class
 	COMPLEX_NUMBER_EXAMPLE
@@ -11,12 +9,12 @@ class
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make
+			-- Run example.
 		local
-			a: COMPLEX
-			b: COMPLEX
+			a, b: COMPLEX
 		do
 			create a.make (1, 1)
 			create b.make (3.14159, 1.25)

@@ -1,9 +1,9 @@
 note
 	description: "Noncyclic part of hailstone sequence"
-	URI: "http://rosettacode.org/wiki/Hailstone_sequence"
 	author: "Victorien ELVINGER"
-	date: "$Date$"
-	revision: "$Revision$"
+	date: "22 August 2013"
+	revision: "1"
+	libraries: "Relies on LINKED_SET from EiffelBase"
 
 class
 	HAILSTONE_SET
@@ -16,10 +16,10 @@ create
 
 feature {NONE} -- Initialization
 
-	make (a_start: like first)
+	make (a_start: NATURAL)
 			-- Create an hailstone stream starting at 'a_start'.
 		require
-			a_start_strictly_positive: a_start > 0
+			a_start_positive: a_start > 0
 		local
 			l_stream: HAILSTONE_STREAM
 		do
@@ -69,7 +69,7 @@ feature {NONE} -- Implementation
 	set: LINKED_SET [NATURAL]
 
 invariant
-	items_strictly_positives: across Current as ic all ic.item > 0 end
+	items_positives: across Current as ic all ic.item > 0 end
 	count_definition: count = set.count
 	first_definition: first = set.first
 	last_definition: last = set.last

@@ -1,6 +1,8 @@
 note
 	description: "Null object representation"
-	URI: "http://rosettacode.org/wiki/Null_object"
+	EIS: "name=Void Value Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Null_object", "tag=requirement"
+	date: "22 August 2013"
+	revision: "2"
 
 class
 	VOID_VALUE_EXAMPLE
@@ -11,7 +13,7 @@ create
 feature {NONE} -- Initialization
 
 	make
-			-- Run example
+			-- Run example.
 		local
 			l_any: detachable ANY
 		do
@@ -20,18 +22,18 @@ feature {NONE} -- Initialization
 
 			-- Void-safe call for local variables
 			if l_any /= Void then
-				l_any.do_nothing
+				-- call l_any.f
 			end
 
 			if attached l_any then
-				l_any.do_nothing
+				-- call l_any.f
 			else
 				print ("%N l_any is void")
 			end
 
 			-- Void-safe call for locals and attributes
-			if attached field as l_property then
-				l_property.do_nothing
+			if attached field as l_field then
+				-- call l_field.f
 			end
 		end
 

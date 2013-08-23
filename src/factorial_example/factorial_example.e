@@ -1,6 +1,6 @@
 note
 	description: "recursive and iterative factorial example of a positive integer."
-	URI: "http://rosettacode.org/wiki/Factorial"
+	EIS: "name=Factorial Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Factorial", "tag=requirement"
 	author: "Victorien ELVINGER"
 
 class
@@ -12,6 +12,7 @@ create
 feature -- Initialization
 
 	make
+			-- Run example.
 		local
 			n: NATURAL
 		do

@@ -12,17 +12,22 @@ note
 		not 8-bit code units for UTF-8 or 16-bit code units for UTF-16. 
 		Programs for other encodings (such as 8-bit ASCII, or EUC-JP) are not required to handle all Unicode characters.
 	]"
-	uri: "http://rosettacode.org/wiki/Substring"
+	EIS: "name=Substring Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Substring", "tag=requirement"
 	comment :"Eiffel String are 1-indexed"
+
 class
 	SUBSTRING_EXAMPLE
+
 create
 		make
+
 feature -- Initialization
+
 		make
+				-- Run example.
 			local
-				str, str2 : STRING
-				i,n,m : INTEGER
+				str, str_2: STRING
+				i, n, m: INTEGER
 			do
 				str := "abcdefgh"
 
@@ -30,25 +35,26 @@ feature -- Initialization
 				m := 3
 				print ("%NString:" + str)
 
-				print("%N starting from n:"+ n.out + " characters in and of m:" +m.out+" length:" +str.substring (n, n+m))
-				print("%N starting from n:"+ n.out + " up to the end of the string:" +str.substring (n, str.count))
-				str2 := str.twin
-				str2.remove_tail (1)
-				print("%N whole string minus last character:" + str2)
+				print ("%N starting from n:" + n.out + " characters in and of m:" + m.out + " length:" + str.substring (n, n + m))
+				print ("%N starting from n:" + n.out + " up to the end of the string:" + str.substring (n, str.count))
+				str_2 := str.twin
+				str_2.remove_tail (1)
+				print ("%N whole string minus last character:" + str_2)
 
 				check
 					-- The string has the character
 					str.has ('d')
 				end
 				i := str.index_of ('d', 1)
-				print("%N starting from a known character d within the string abcdefgh and of m:" +m.out+" length:" +str.substring (i, i+m))
-				--starting from a known substring within the string and of m length.
+				print ("%N starting from a known character d within the string abcdefgh and of m:" + m.out + " length:" + str.substring (i, i + m))
+				-- Starting from a known substring within the string and of m length.
 				check
 					-- The str has the substring
 					str.has_substring ("ab")
 				end
 
 				i := str.substring_index ("ab", 1)
-				print("%N starting from a known substring  ab within the string abcdefgh and of m:" +m.out+" length:" +str.substring (i, i+m))
+				print ("%N starting from a known substring  ab within the string abcdefgh and of m:" + m.out + " length:" + str.substring (i, i + m))
 			end
+
 end

@@ -1,22 +1,29 @@
 note
 	description: "Summary description for {STRIP_CHARACTERS_STRING_EXAMPLE}."
-	uri : "http://rosettacode.org/wiki/Strip_a_set_of_characters_from_a_string"
+	EIS: "name=Strip Characters Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Strip_a_set_of_characters_from_a_string", "tag=requirement"
+
 class
 	STRIP_CHARACTERS_STRING_EXAMPLE
+
 create
 	make
 
-feature
+feature -- Initialization
+
 	make
+			-- Run example
 		do
 			print(strips_characters ("She was a soul stripper. She took my heart!", <<'a','e','i'>>))
 		end
 
-	strips_characters ( str:STRING; chars:ARRAY[CHARACTER]) : STRING
+feature -- Other
+
+	strips_characters (a_string: STRING; a_chars: ARRAY [CHARACTER]): STRING
+			-- String similar to 'a_string' with the characters 'a_chars' removed.
 		do
-			Result := str.twin
-			across chars as c loop
-						Result.prune_all (c.item)
+			Result := a_string.twin
+			across a_chars as ic loop
+				Result.prune_all (ic.item)
 			end
 		end
 

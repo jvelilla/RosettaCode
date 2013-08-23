@@ -1,14 +1,18 @@
 note
 	description: "Example even odd."
-	URI:"http://rosettacode.org/wiki/Even_or_odd"
+	EIS: "name=Even Odd Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Even_or_odd", "tag=requirement"
 	comment : "\\ is integer remainder."
+
 class
 	EVEN_ODD_EXAMPLE
+
 create
 	make
+
 feature -- Initialization
 
 	make
+			-- Run example.
 		local
 			i: INTEGER
 		do
@@ -31,7 +35,6 @@ feature -- Initialization
 					print ("%N" + i.out + " is odd")
 				end
 			end
-
 		end
 
 feature -- Other

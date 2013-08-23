@@ -1,8 +1,8 @@
 note
 	description: "Hailstone set of 27 and highest hailstone set betwen 1 and 100_000"
-	URI: "http://rosettacode.org/wiki/Hailstone_sequence"
-	date: "$Date$"
-	revision: "$Revision$"
+	EIS: "name=Hailstone Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Hailstone_sequence", "tag=requirement"
+	date: "22 August 2013"
+	revision: "1"
 
 class
 	HAILSTONE_SEQUENCE_EXAMPLE
@@ -13,6 +13,8 @@ create
 feature -- Initialization
 
 	make
+			-- Check that the hailstone set of 27 has 112 items
+			-- Search the highest hailstone set betwen 1 and 100_000
 		local
 			l_hailstone: HAILSTONE_SET
 		do

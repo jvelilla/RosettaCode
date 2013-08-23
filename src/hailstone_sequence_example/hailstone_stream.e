@@ -1,9 +1,8 @@
 note
 	description: "Hailstone stream that provides values one by one."
-	URI: "http://rosettacode.org/wiki/Hailstone_sequence"
 	author: "Victorien ELVINGER"
-	date: "$Date$"
-	revision: "$Revision$"
+	date: "22 August 2013"
+	revision: "1"
 
 class
 	HAILSTONE_STREAM
@@ -13,10 +12,10 @@ create
 
 feature {NONE} -- Initialization
 
-	make (a_start: like item)
+	make (a_start: NATURAL)
 			-- Create an hailstone stream starting at 'a_start'.
 		require
-			a_start_strictly_positive: a_start > 0
+			a_start_positive: a_start > 0
 		do
 			item := a_start
 		end
@@ -39,12 +38,12 @@ feature -- Cursor movement
 feature {NONE} -- Implementation
 
 	even (n: NATURAL): BOOLEAN
-			-- Is 'item' an even number?
+			-- Is 'n' even?
 		do
 			Result := (n \\ 2) = 0
 		end
 
-	next (n: like next): NATURAL
+	next (n: NATURAL): NATURAL
 			-- Item at next cursor position.
 		do
 			if even (n) then
@@ -58,5 +57,5 @@ feature {NONE} -- Implementation
 		end
 
 invariant
-	item_strictly_positive: item > 0
+	item_positive: item > 0
 end

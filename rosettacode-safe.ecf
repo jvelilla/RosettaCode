@@ -18,8 +18,7 @@
 		<root class="ALL_EXAMPLES" feature="make"/>
 		<library name="eel" location="$ISE_LIBRARY\contrib\library\text\encryption\eel\eel-safe.ecf"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
-		<cluster name="src" location=".\src\" recursive="true">
-		</cluster>
+		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="boolean" extends="example">
 		<root class="BOOLEAN_EXAMPLE" feature="make"/>

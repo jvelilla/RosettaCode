@@ -1,6 +1,6 @@
 note
 	description: "Compute the n-th term of a series"
-	URI: "http://rosettacode.org/wiki/Ackermann_function"
+	EIS: "name=Ackerman Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Ackermann_function", "tag=requirement"
 
 class
 	ACKERMAN_EXAMPLE
@@ -8,9 +8,10 @@ class
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make
+			-- Run example.
 		do
 			print ("%N A(0,0):" + ackerman (0, 0).out)
 			print ("%N A(1,0):" + ackerman (1, 0).out)

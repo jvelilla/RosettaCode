@@ -1,1 +1,11 @@
-Examples in Eiffel based on problem descriptions from Rosetta Code (http://rosettacode.org/wiki/Rosetta_Code)
+Description:
+	Examples in Eiffel based on problem descriptions from Rosetta Code (http://rosettacode.org/wiki/Rosetta_Code)
+
+Advices:
+	1. Make it easy to read for Eiffel newcomers.
+
+	2. Use the Eiffel Style guidelines
+		- http://dev.eiffel.com/Style_Guidelines
+		- (advisable) http://dev.eiffel.com/Local_Declaration_Guidelines
+
+	3. Ensure that the ECF file is not confused after a sub-cluster addition.

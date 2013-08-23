@@ -1,3 +1,8 @@
+note
+	description: "Rosetta Code examples"
+	EIS: "name=Rosetta Code Project", "protocol=URI", "src=http://rosettacode.org/", "tag=project"
+	date: "22 August 2013"
+
 class
 	ALL_EXAMPLES
 
@@ -10,7 +15,7 @@ create
 feature -- Initialization
 
 	make
-			-- Run all examples
+			-- Run all examples.
 		local
 			any: ANY
 		do
@@ -87,14 +92,11 @@ feature -- Initialization
 			print ("%N%NExecute SET_EXAMPLE ...%N")
 			create {SET_EXAMPLE} any.make
 
-
 			print ("%N%NExecute READ_FILE_LINE_BY_LINE_EXAMPLE ...%N")
 			create {READ_FILE_LINE_BY_LINE_EXAMPLE} any.make
 
-
 			print ("%N%NExecute {ENVIRONMENT_VARIABLES_EXAMPLE} ...%N")
 			create {ENVIRONMENT_VARIABLES_EXAMPLE} any.make
-
 
 			print ("%N%NExecute {ARITHMETIC_MEAN_EXAMPLE} ...%N")
 			create {ARITHMETIC_MEAN_EXAMPLE} any.make

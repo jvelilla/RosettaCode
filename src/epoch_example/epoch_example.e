@@ -6,9 +6,9 @@ note
 		but text from (with links to) documentation is also acceptable where a demonstration is impossible/impractical. 
 		For consistency's sake, show the date in UTC time where possible.
 		]"
-	URI: "http://rosettacode.org/wiki/Show_the_epoch"
+	EIS: "name=Epoch Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Show_the_epoch", "tag=requirement"
 	comment: "Dependency on Time library"
-	documentation:"http://docs.eiffel.com/book/solutions/eiffeltime"
+	documentation: "http://docs.eiffel.com/book/solutions/eiffeltime"
 
 
 class
@@ -17,9 +17,10 @@ class
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make
+			-- Run example.
 		local
 			dt : DATE_TIME
 		do
