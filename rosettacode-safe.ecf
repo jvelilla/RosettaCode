@@ -11,6 +11,7 @@
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
 		<setting name="enforce_unique_class_names" value="true"/>
+		<setting name="concurrency" value="scoop"/>
 		<precompile name="base_pre" location="$ISE_PRECOMP\base-safe.ecf"/>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 	</target>
@@ -26,6 +27,10 @@
 	</target>
 	<target name="dot_product" extends="example">
 		<root class="DOT_PRODUCT_EXAMPLE" feature="make"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="fork_example" extends="example">
+		<root class="FORK_EXAMPLE" feature="make"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="factorial" extends="example">

@@ -1,5 +1,6 @@
 1. Use the Eiffel Style guidelines
 	- http://dev.eiffel.com/Style_Guidelines
+	- http://dev.eiffel.com/Eiffel_Code_Comments
 	- (advisable) http://dev.eiffel.com/Local_Declaration_Guidelines
 
 2. Use the Eiffel Information System to link specification (Rosetta Code page) and the Eiffel implementation.

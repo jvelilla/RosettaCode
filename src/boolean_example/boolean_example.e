@@ -4,7 +4,7 @@ note
 		If other objects represent "true" or "false" in conditionals, note it.
 	]"
 	EIS: "name=Boolean EXample Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Boolean_values", "tag=requirement"
-	comments: "Only one BOOLEAN class,that can only be either True or False."
+	comments: "Only one BOOLEAN class, that can only be either True or False."
 
 class
 	BOOLEAN_EXAMPLE
