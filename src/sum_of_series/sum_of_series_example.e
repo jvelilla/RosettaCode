@@ -1,7 +1,9 @@
 note
 	description: "Compute the n-th term of a series"
-	URI: "http://rosettacode.org/wiki/Sum_of_a_series"
+	EIS: "name=Sum Of Series Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Sum_of_a_series", "tag=requirement"
 	author: "Victorien ELVINGER"
+	date: "22 August 2013"
+	revision: "2"
 
 class
 	SUM_OF_SERIES_EXAMPLE
@@ -15,16 +17,17 @@ create
 feature -- Initialization
 
 	make
+			-- Run example.
 		local
-			approximated, known: REAL_64
+			l_approximated, l_known: REAL_64
 		do
-			known := Pi^2 / 6
+			l_known := Pi^2 / 6
 
-			approximated := sum_until (agent g, 1001)
+			l_approximated := sum_until (agent g, 1001)
 			print ("%Nzeta function exact value: %N")
-			print (known)
+			print (l_known)
 			print ("%Nzeta function approximated value: %N")
-			print (approximated)
+			print (l_approximated)
 		end
 
 feature -- Access

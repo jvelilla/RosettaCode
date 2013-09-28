@@ -1,0 +1,11 @@
+1. Use the Eiffel Style guidelines
+	- http://dev.eiffel.com/Style_Guidelines
+	- http://dev.eiffel.com/Eiffel_Code_Comments
+	- (advisable) http://dev.eiffel.com/Local_Declaration_Guidelines
+
+2. Use the Eiffel Information System to link specification (Rosetta Code page) and the Eiffel implementation.
+See: http://docs.eiffel.com/book/eiffelstudio/eiffel-information-system
+
+3. Ensure that the ECF file is not confused after a sub-cluster addition.
+
+Thanks for your future contribution.

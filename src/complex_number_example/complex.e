@@ -1,3 +1,6 @@
+note
+	description: "Immutable complex"
+
 class
 	COMPLEX
 
@@ -10,22 +13,28 @@ create
 
 feature {NONE} -- Initialization
 
-	make (r, i: REAL_32)
+	make (a_real, a_imag: REAL)
+			-- Create a complex with 'a_real' as real part and 'a_imag' as imaginary part.
 		do
-			real := r
-			imag := i
+			real := a_real
+			imag := a_imag
+		ensure
+			real_effect: real = a_real
+			imag_effect: imag = a_imag
 		end
 
 feature -- Access
 
-	real: REAL_32
+	real: REAL
+			-- Real part
 
-	imag: REAL_32
+	imag: REAL
+			-- Imaginary part
 
 	one: like Current
 			-- Neutral element for "*" and "/"
 		do
-			create Result.make (1,0)
+			create Result.make (1, 0)
 		end
 
 	zero: like Current
@@ -57,9 +66,9 @@ feature -- Operations
 	quotient alias "/" (other: like Current): like Current
 			-- Division by `other'
 		local
-			a, b, c, d: REAL_32
-			r, i: REAL_32
-			n: REAL_32
+			a, b, c, d: REAL
+			r, i: REAL
+			n: REAL
 		do
 			a := real
 			b := imag

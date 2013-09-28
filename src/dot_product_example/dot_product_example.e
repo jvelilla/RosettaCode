@@ -1,6 +1,6 @@
 note
 	description: "Scalar product bewteen two vectors."
-	uri: "http://rosettacode.org/wiki/Dot_product"
+	EIS: "name=Scalar Product Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Dot_product", "tag=requirement"
 	author: "Victorien ELVINGER"
 
 class
@@ -9,19 +9,20 @@ class
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make
+			-- Run example.
 		local
-			vect, vect2: ARRAY [REAL]
+			u, v: ARRAY [REAL]
 		do
-			vect := <<1, 3, -5>>
-			vect2 := <<4, -2, -1>>
-			print ("%NDot product: " + dot_product (vect, vect2).out)
+			u := <<1, 3, -5>>
+			v := <<4, -2, -1>>
+			print ("%NDot product: " + dot_product (u, v).out)
 
-			vect := <<1, 3>>
-			vect2 := <<4, -2, -1>>
-			print ("%NDot product 2: " + dot_product (vect, vect2).out)
+			u := <<1, 3>>
+			v := <<4, -2, -1>>
+			print ("%NDot product 2: " + dot_product (u, v).out)
 		end
 
 feature -- Access
@@ -29,19 +30,19 @@ feature -- Access
 	dot_product (u, v: ARRAY [REAL]): REAL
 			-- Scalar product betwen u and v
 		local
-			upper, i: INTEGER
+			i, l_upper: INTEGER
 		do
-			upper := u.upper.min (v.upper)
+			l_upper := u.upper.min (v.upper)
 
 			from
 				i := u.lower
 			until
-				i > upper
+				i > l_upper
 			loop
 				Result := Result + (u [i] * v [i])
 				i := i + 1
 			variant
-				upper - i + 1
+				l_upper - i + 1
 			end
 		end
 

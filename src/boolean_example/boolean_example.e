@@ -1,11 +1,10 @@
 note
-	rosettacode:"Boolean values"
-	URI:"http://rosettacode.org/wiki/Boolean_values"
 	description:"[
 		Show how to represent the boolean states "true" and "false" in a language.
 		If other objects represent "true" or "false" in conditionals, note it.
 	]"
-	comments: " Only one BOOLEAN class,that can only be either True or False."
+	EIS: "name=Boolean EXample Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Boolean_values", "tag=requirement"
+	comments: "Only one BOOLEAN class, that can only be either True or False."
 
 class
 	BOOLEAN_EXAMPLE
@@ -13,9 +12,10 @@ class
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make
+			-- Run example.
 		local
 			l_bool: BOOLEAN
 		do

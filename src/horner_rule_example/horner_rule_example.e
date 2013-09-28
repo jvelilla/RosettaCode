@@ -1,8 +1,5 @@
 note
 	rosettacode:"Horner's rule for polynomial evaluation"
-	URI:"[
-		http://rosettacode.org/wiki/Horner%27s_rule_for_polynomial_evaluation
-		]"
 	description:"[
 		A fast scheme for evaluating a polynomial such as:
 		-19 + 7x - 4x^2 + 6x^3
@@ -12,6 +9,7 @@ note
 		((((0)x + 6)x + (-4))x + 7)x + (-19)
 		And compute the result from the innermost brackets outwards
 	]"
+	EIS: "name=Horner Rule Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Horner%%27s_rule_for_polynomial_evaluation", "tag=requirement"
 
 class
 	HORNER_RULE_EXAMPLE
@@ -19,7 +17,7 @@ class
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make
 		local
@@ -31,19 +29,20 @@ feature {NONE} -- Initialization
 
 feature -- Access
 
-	polynomial_evaluation (coefficients: ARRAY [INTEGER]; x:INTEGER): INTEGER
+	polynomial_evaluation (a_coefficients: ARRAY [INTEGER]; x:INTEGER): INTEGER
+			-- Polynomial evaluation of 'a_coefficients'
 		require
-			valid_degree: coefficients.count = x + 1
+			valid_degree: a_coefficients.count = x + 1
 		local
-			i : INTEGER
+			i: INTEGER
 		do
 			from
 				Result := 0
-				i := coefficients.count
+				i := a_coefficients.count
 			until
 				i = 0
 			loop
-				Result := (Result * x) + coefficients[i]
+				Result := Result*x + a_coefficients [i]
 				i := i - 1
 			end
 		end

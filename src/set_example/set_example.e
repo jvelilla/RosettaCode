@@ -1,42 +1,33 @@
 ﻿note
 	description: "Summary description for {SET_EXAMPLE}."
-	uri : "http://rosettacode.org/wiki/Set"
+	EIS: "name=Set Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Set", "tag=requirement"
 
 class
 	SET_EXAMPLE
+
 create
 	make
-feature
+
+feature -- Initialization
+
 	make
 		local
-			a, b, c, d : ARRAYED_SET[INTEGER]
+			a, b, c, d: ARRAYED_SET [INTEGER]
 		do
 			-- Set creation
-			create a.make (4)
-			create b.make (3)
-			create c.make (2)
-			create d.make (2)
-
-			a.compare_objects
-			b.compare_objects
-			c.compare_objects
-			d.compare_objects
+			create a.make (4); a.compare_objects
+			create b.make (3); b.compare_objects
+			create c.make (2); c.compare_objects
+			create d.make (2); d.compare_objects
 
 			-- set A(1,2,3,4)
-			a.put (1)
-			a.put (2)
-			a.put (3)
-			a.put (4)
+			a.put (1); a.put (2); a.put (3); a.put (4)
 
 			-- set B(2,3,4,5)
-			b.put (2)
-			b.put (3)
-			b.put (4)
-			b.put (5)
+			b.put (2); b.put (3); b.put (4); b.put (5)
 
 			-- set C(5,6)
-			c.put (5)
-			c.put (6)
+			c.put (5); c.put (6)
 
 			has_element (1, A)
 			has_element (10, A)
@@ -74,44 +65,44 @@ feature
 
 		end
 
-	has_element (e : INTEGER; b : SET[INTEGER])
-		-- Test m ∈ S -- "m is an element in set S"
+	has_element (e: INTEGER; b: SET[INTEGER])
+			-- Test m ∈ S -- "m is an element in set S"
 		do
 			print ("%NHas the set: " + b.out +"the element "+ e.out + "? " + b.has (e).out)
 		end
 
-	union (a , b : ARRAYED_SET[INTEGER])
-		-- A ∪ B -- union; a set of all elements either in set A or in set B.
+	union (a , b: ARRAYED_SET[INTEGER])
+			-- A ∪ B -- union; a set of all elements either in set A or in set B.
 		local
-			aux : ARRAYED_SET[INTEGER]
+			l_aux: ARRAYED_SET[INTEGER]
 		do
-			aux := a.twin
-			aux.merge (b)
-			print ("%N Union:" + aux.out)
+			l_aux := a.twin
+			l_aux.merge (b)
+			print ("%N Union:" + l_aux.out)
 		end
 
-	interseccion (a , b : ARRAYED_SET[INTEGER] )
-		-- A ∩ B -- intersection; a set of all elements in both set A and set B.
+	interseccion (a , b:ARRAYED_SET[INTEGER] )
+			-- A ∩ B -- intersection; a set of all elements in both set A and set B.
 		local
-			aux : ARRAYED_SET[INTEGER]
+			l_aux: ARRAYED_SET[INTEGER]
 		do
-			aux := a.twin
-			aux.intersect (b)
-			print ("%N Interseccion:" + aux.out)
+			l_aux := a.twin
+			l_aux.intersect (b)
+			print ("%N Interseccion:" + l_aux.out)
 		end
 
-	difference	(a , b : ARRAYED_SET [INTEGER])
-		--A ∖ B -- difference; a set of all elements in set A, except those in set B.
+	difference (a , b: ARRAYED_SET [INTEGER])
+			-- A ∖ B -- difference; a set of all elements in set A, except those in set B.
 		local
-			aux : ARRAYED_SET[INTEGER]
+			l_aux :ARRAYED_SET[INTEGER]
 		do
-			aux := a.twin
-			aux.subtract (b)
-			print ("%N difference:" + aux.out)
+			l_aux := a.twin
+			l_aux.subtract (b)
+			print ("%N difference:" + l_aux.out)
 		end
 
-	subset	(a , b : ARRAYED_SET [INTEGER])
-		--A ⊆ B -- subset; true if every element in set A is also in set B.
+	subset (a , b :ARRAYED_SET [INTEGER])
+			--A ⊆ B -- subset; true if every element in set A is also in set B.
 		do
 			if a.is_subset (b) then
 				print ("%NSet A is subset of B")
@@ -120,14 +111,14 @@ feature
 			end
 		end
 
-	equality	(a , b : ARRAYED_SET [INTEGER])
+	equality (a , b :ARRAYED_SET [INTEGER])
 			--A = B -- equality; true if every element of set A is in set B and vice-versa.	
 		do
 			print ("%NA = B :" + a.is_equal (b).out)
 		end
 
 	proper_subset (a , b : ARRAYED_SET [INTEGER])
-		-- If A ⊆ B, but A ≠ B, then A is called a true or proper subset of B, written A ⊂ B or A ⊊ B
+			-- If A ⊆ B, but A ≠ B, then A is called a true or proper subset of B, written A ⊂ B or A ⊊ B
 		do
 			if a.is_subset (b) and then (not a.is_equal (b)) then
 				print ("%N A is a proper subset of  B : True")
@@ -135,8 +126,5 @@ feature
 				print ("%N A is a proper subset of  B : False")
 			end
 		end
-
-
-
 
 end

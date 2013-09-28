@@ -1,6 +1,8 @@
 note
 	description: "Sudoku example"
-	URI: "http://rosettacode.org/wiki/Sudoku"
+	EIS: "name=Sudoku Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Sudoku", "tag=requirement"
+	date: "22 August 2013"
+	revision: "2"
 
 class
 	SUDOKU_EXAMPLE
@@ -8,9 +10,10 @@ class
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make
+			-- Create a grid and solve it
 		local
 			grid: SUDOKU_GRID
 		do
