@@ -1,7 +1,9 @@
 note
 	description: "Sudoku grid and resolution facilities."
-	URI: "http://rosettacode.org/wiki/Sudoku"
 	author: "Victorien ELVINGER"
+	date: "22 August 2013"
+	revision: "2"
+	libraries: "Relies on ARRAY2 from EiffelBase"
 
 class
 	SUDOKU_GRID
@@ -15,22 +17,15 @@ inherit
 create
 	default_create
 
-feature -- Initialization
+feature {NONE} -- Initialization
 
 	default_create
 			-- create an empty grid
 		do
-			solved := False
 			create grid.make_filled (Default_value, 9, 9)
+		ensure then
+			unsolved: not solved
 		end
-
-feature {NONE} -- Access
-
-	grid: ARRAY2 [INTEGER]
-			-- board
-
-	Default_value: INTEGER = 0
-			-- Empty cell content
 
 feature -- Access
 
@@ -38,14 +33,40 @@ feature -- Access
 			-- printable representation
 		do
 			Result := ""
-			across 1 |..| grid.width as column_it
-			loop
-				across 1 |..| grid.height as row_it
-				loop
-					Result := Result + grid.item (row_it.item, column_it.item).out + " "
+			across 1 |..| grid.width as column_ic loop
+				across 1 |..| grid.height as row_ic loop
+					Result := Result + grid.item (row_ic.item, column_ic.item).out + " "
 				end
 				Result := Result + "%N"
 			end
+		end
+
+	subgrid_column_range (a_column: INTEGER): INTEGER_INTERVAL
+			-- Colum interval of the subgrids including 'a_column'
+		require
+			valid_column (a_column)
+		local
+			l_column: like a_column
+		do
+			l_column := ((a_column - 1) // 3)*3 + 1
+			Result := l_column |..| (l_column + 2)
+		ensure
+			lower_bound: (<<1, 4, 7>>).has (Result.lower)
+			upper_bound: (<<3, 6, 9>>).has (Result.upper)
+		end
+
+	subgrid_row_range (a_row: INTEGER): INTEGER_INTERVAL
+			-- Row interval of the subgrids including 'a_row'
+		require
+			valid_row (a_row)
+		local
+			l_row: like a_row
+		do
+			l_row := ((a_row - 1) // 3)*3 + 1
+			Result := l_row |..| (l_row + 2)
+		ensure
+			lower_bound: (<<1, 4, 7>>).has (Result.lower)
+			upper_bound: (<<3, 6, 9>>).has (Result.upper)
 		end
 
 feature -- Status Report
@@ -53,105 +74,96 @@ feature -- Status Report
 	solved: BOOLEAN
 			-- Is completed?
 
-	valid_column (column: INTEGER): BOOLEAN
-			-- Is 'column' a valid coordinate?
+	valid_column (a_column: INTEGER): BOOLEAN
+			-- Is 'a_column' a valid coordinate?
 		do
-			Result := column >= 1 and column <= grid.width
+			Result := 1 <= a_column and a_column <= grid.width
 		end
 
-	valid_row (row: INTEGER): BOOLEAN
-			-- Is 'row' a valid coordinate?
+	valid_row (a_row: INTEGER): BOOLEAN
+			-- Is 'a_row' a valid coordinate?
 		do
-			Result := row >= 1 and row <= grid.height
+			Result := 1 <= a_row and a_row <= grid.height
 		end
 
-	valid_value (v: INTEGER): BOOLEAN
-			-- Is 'v' a valid item?
+	valid_value (a_value: INTEGER): BOOLEAN
+			-- Is 'a_value' a valid item?
 		do
-			Result := v >= 1 and v <= 9
+			Result := 1 <= a_value and a_value <= 9
 		end
 
-	valid (v: INTEGER; row, column: INTEGER): BOOLEAN
-			-- Can 'v' be inserted at coordinates ('row', 'column')?
+	valid (a_value: INTEGER; a_row, a_column: INTEGER): BOOLEAN
+			-- Can 'a_value' be inserted at coordinates ('a_row', 'a_column')?
 		require
-			valid_value (v)
-			valid_row (row)
-			valid_column (column)
-		local
-			sub_grid_lower_row, sub_grid_lower_column: like row
+			valid_value (a_value)
+			valid_row (a_row)
+			valid_column (a_column)
 		do
-			Result := not (subgrid_has (v, row, column) or row_has (v, row) or column_has (v, column))
+			Result := not (subgrid_has (a_value, a_row, a_column) or row_has (a_value, a_row) or column_has (a_value, a_column))
 		end
 
-	subgrid_has (v: INTEGER; row, column: INTEGER): BOOLEAN
-			-- Is there 'v' in the subgrid containing coordinates ('row', 'column')?
+	subgrid_has (a_value: INTEGER; a_row, a_column: INTEGER): BOOLEAN
+			-- Is there 'a_value' in the subgrid containing coordinates ('a_row', 'a_column')?
 		require
-			valid_row (row)
-			valid_column (column)
-		local
-			lower_row, lower_column: like row
+			valid_row (a_row)
+			valid_column (a_column)
 		do
-			lower_column := (((column - 1) // 3)) * 3 + 1
-			lower_row := (((row - 1) // 3)) * 3 + 1
-			Result := False
-
-			check
-				valid_lower_column: lower_column = 1 or lower_column = 4 or lower_column = 7
-				valid_lower_row: lower_row = 1 or lower_row = 4 or lower_row = 7
-			end
-
-			across lower_row |..| (lower_row + 2) as row_it
+			across
+				subgrid_row_range (a_row) as row_ic
 			until
 				Result
 			loop
-				across lower_column |..| (lower_column + 2) as column_it
+				across
+					subgrid_column_range (a_column) as column_ic
 				until
 					Result
 				loop
-					Result := grid.item (row_it.item, column_it.item) = v
+					Result := grid.item (row_ic.item, column_ic.item) = a_value
 				end
 			end
 		end
 
-	row_has (v: INTEGER; row: INTEGER): BOOLEAN
-			-- Exist there an item 'v' at coordinates ('row', ?)?
+	row_has (a_value: INTEGER; a_row: INTEGER): BOOLEAN
+			-- Exist there an item 'a_value' at coordinates ('a_row', ?)?
 		require
-			valid_row (row)
+			valid_row (a_row)
 		do
-			across 1 |..| grid.height as it
+			across
+				1 |..| grid.height as ic
 			until
 				Result
 			loop
-				Result := grid.item (row, it.item) = v
+				Result := grid.item (a_row, ic.item) = a_value
 			end
 		end
 
-	column_has (v: INTEGER; column: INTEGER): BOOLEAN
-			-- Exist there an item 'v' at coordinates (?, 'column')?
+	column_has (a_value: INTEGER; a_column: INTEGER): BOOLEAN
+			-- Exist there an item 'a_value' at coordinates (?, 'a_column')?
 		require
-			valid_column (column)
+			valid_column (a_column)
 		do
-			across 1 |..| grid.height as it
+			across
+				1 |..| grid.height as ic
 			until
 				Result
 			loop
-				Result := grid.item (it.item, column) = v
+				Result := grid.item (ic.item, a_column) = a_value
 			end
 		end
 
 feature -- EXtension
 
-	put (v: INTEGER; row, column: INTEGER)
-			-- Assign item `v' at coordinates ('row', 'column')
+	put (a_value: INTEGER; a_row, a_column: INTEGER)
+			-- Assign item 'a_value' at coordinates ('a_row', 'a_column')
 		require
-			valid_value (v)
-			valid_row (row)
-			valid_column (column)
-			valid (v, row, column)
+			valid_value (a_value)
+			valid_row (a_row)
+			valid_column (a_column)
+			valid (a_value, a_row, a_column)
 		do
-			grid.put (v, row, column)
+			grid.put (a_value, a_row, a_column)
 		ensure
-			item_inserted: grid.item (row, column) = v
+			item_inserted: grid.item (a_row, a_column) = a_value
 		end
 
 feature -- Change
@@ -162,53 +174,59 @@ feature -- Change
 			sub_solve (1, 1)
 		end
 
-feature {NONE} -- Change
+feature {NONE} -- Implementation
 
-	sub_solve (row, column: INTEGER)
-			-- Solve grid from row 'row' and column 'colums'.
+	grid: ARRAY2 [INTEGER]
+			-- board
+
+	Default_value: INTEGER = 0
+			-- Empty cell content
+
+	sub_solve (a_row, a_column: INTEGER)
+			-- Solve grid from row 'a_row' and column 'a_column'.
 		require
-			valid_row (row)
-			valid_column (column)
+			valid_row (a_row)
+			valid_column (a_column)
 		do
-			if valid_value (grid.item (row, column)) then
-				solve_after (row, column)
+			if valid_value (grid.item (a_row, a_column)) then
+				solve_after (a_row, a_column)
 			else
-				across 1 |..| 9 as it
+				across
+					1 |..| 9 as ic
 				until
 					solved
 				loop
-					if valid (it.item, row, column) then
-						put (it.item, row, column)
-						solve_after (row, column)
+					if valid (ic.item, a_row, a_column) then
+						put (ic.item, a_row, a_column)
+						solve_after (a_row, a_column)
 
 						if not solved then
-							grid.put (Default_value, row, column)
+							grid.put (Default_value, a_row, a_column)
 						end
 					end
 				end
 			end
 		end
 
-	solve_after (row, column: INTEGER)
+	solve_after (a_row, a_column: INTEGER)
 			-- Solve the next cell.
 		require
-			valid_row (row)
-			valid_column (column)
+			valid_row (a_row)
+			valid_column (a_column)
 		do
-			if column = grid.width then
-				if row = grid.height then
+			if a_column = grid.width then
+				if a_row = grid.height then
 					solved := TRue
 				else
-					-- print (row.out + "%N")
-					sub_solve (row + 1, 1)
+					sub_solve (a_row + 1, 1)
 				end
 			else
-				sub_solve (row, column + 1)
+				sub_solve (a_row, a_column + 1)
 			end
 		end
 
 invariant
-	valid_numbers: solved implies across grid as it all valid_value (it.item) end
+	valid_numbers: solved implies across grid as ic all valid_value (ic.item) end
 	nine_columns: grid.width = 9
 	nine_rows: grid.height = 9
 end

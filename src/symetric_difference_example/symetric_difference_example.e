@@ -1,6 +1,6 @@
 note
 	description: "Summary description for {SYMETRIC_DIFFERENCE_EXAMPLE}."
-	URI: "http://rosettacode.org/wiki/Symmetric_difference"
+	EIS: "name=Symetric Difference Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Symmetric_difference", "tag=requirement"
 
 class
 	SYMETRIC_DIFFERENCE_EXAMPLE
@@ -8,11 +8,12 @@ class
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make
+			-- Run example.
 		local
-			a,a1,b,b1: ARRAYED_SET [STRING]
+			a, a1, b, b1: ARRAYED_SET [STRING]
 		do
 			create a.make (4)
 			create b.make (4)

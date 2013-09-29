@@ -1,6 +1,6 @@
 note
 	description: "Example RosettaCode read a specific line from a file"
-	uri: "http://rosettacode.org/wiki/Read_a_specific_line_from_a_file"
+	EIS: "name=Read Specific Line Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Read_a_specific_line_from_a_file", "tag=requirement"
 
 class
 	READ_SPECIFIC_LINE_FILE_EXAMPLE
@@ -8,9 +8,10 @@ class
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make
+			-- Run example
 		do
 			print_content_at (1)
 			io.put_new_line

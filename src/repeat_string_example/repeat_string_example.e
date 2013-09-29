@@ -1,6 +1,6 @@
 note
 	description: "Summary description for {REPEAT_STRING_EXAMPLE}."
-	uri: "http://rosettacode.org/wiki/Repeat_a_string"
+	EIS: "name=Repeat String Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Repeat_a_string", "tag=requirement"
 
 class
 	REPEAT_STRING_EXAMPLE
@@ -8,11 +8,12 @@ class
 create
 	make
 
-feature {NONE} -- Initialization
+feature -- Initialization
 
 	make
+			-- Run example.
 		local
-			str : STRING
+			str: STRING
 		do
 			print("%N Custom Implementation")
 			print ("%NRepeat String%N")
@@ -30,7 +31,7 @@ feature -- Access
 
 	repeat (word: STRING; n: NATURAL)
 		local
-			str : STRING
+			str: STRING
 		do
 			str := ""
 			across 1 |..| 5 as c loop
@@ -41,7 +42,7 @@ feature -- Access
 
 	repeat_char (char:CHARACTER; n: NATURAL)
 		local
-			str : STRING
+			str: STRING
 		do
 			str := ""
 			across 1 |..| 5 as c loop

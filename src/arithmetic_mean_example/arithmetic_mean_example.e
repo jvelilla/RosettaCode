@@ -1,6 +1,6 @@
 note
-	description: "Summary description for {ARITHMETIC_MEAN_EXAMPLE}."
-	URI: "http://rosettacode.org/wiki/Averages/Arithmetic_mean"
+	description: "Mean of a numeric vector"
+	EIS: "name=Average Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Averages/Arithmetic_mean", "tag=requirement"
 
 class
 	ARITHMETIC_MEAN_EXAMPLE
@@ -11,22 +11,23 @@ create
 feature -- Initialization
 
 	make
+			-- Run example.
 		do
-			print("%N<<0, 1, 2, 3, 4, 5, 6, 7, 8, 9>>: " + mean (<<0, 1, 2, 3, 4, 5, 6, 7, 8, 9>>).out)
-			print("%N<<>>: " + mean (<<>>).out)
+			print ("%N<<0, 1, 2, 3, 4, 5, 6, 7, 8, 9>>: " + mean (<<0, 1, 2, 3, 4, 5, 6, 7, 8, 9>>).out)
+			print ("%N<<>>: " + mean (<<>>).out)
 		end
 
 feature -- Access
 
-	mean (element: ARRAY [NATURAL]): REAL
+	mean (a: ARRAY [NATURAL]): REAL
 			-- mean of 'element'
 		do
 			Result := 0
-			across element as c from Result := 0 loop
-				Result := Result + c.item
+			across a as ic loop
+				Result := Result + ic.item
 			end
 			if Result /= 0 then
-				Result := Result / element.count
+				Result := Result / a.count
 			end
 		end
 

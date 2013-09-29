@@ -1,6 +1,6 @@
 note
 	description: "Summary description for {READ_FILE_LINE_BY_LINE_EXAMPLE}."
-	uri :"http://rosettacode.org/wiki/Read_a_file_line_by_line"
+	EIS: "name=Read File Line By Line Requirement", "protocol=URI", "src=http://rosettacode.org/wiki/Read_a_file_line_by_line", "tag=requirement"
 
 class
 	READ_FILE_LINE_BY_LINE_EXAMPLE
@@ -9,7 +9,9 @@ create
 	make
 
 feature
+
 	make
+			-- Run example.
 		local
 			f: RAW_FILE
 			line: NATURAL
@@ -32,7 +34,6 @@ feature
 			else
 				print ("Can not read file %"" + f.name + "%".%N")
 			end
-
 		end
 
 end
