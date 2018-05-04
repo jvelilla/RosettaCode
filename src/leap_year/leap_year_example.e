@@ -19,7 +19,7 @@ feature -- Initialization
 			l_dates := 	{ARRAY[INTEGER]}<<1800,1900,1994,1998,1999,2000,2001,2004,2100,2012,2016,1933>>
 			create l_date.make_now
 			across l_dates as ic loop
-				print ("%NIs the year [" + ic.item.out + "] a lear year? " + l_date.is_leap_year (ic.item).out + " - " + is_leap_year (ic.item).out)
+				print ("%NIs the year [" + ic.item.out + "] a leap year? " + l_date.is_leap_year (ic.item).out + " - " + is_leap_year (ic.item).out)
 			end
 		end
 
