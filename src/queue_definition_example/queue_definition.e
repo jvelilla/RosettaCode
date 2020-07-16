@@ -85,16 +85,25 @@ feature -- Output
 			until
 				index = 0
 			loop
-				if attached  queue.at (index) as item then
-					Result.append (" " + item.out )
+				if attached  queue.at (index) as item  then
+					Result.append (" " + item_val (item) )
 				end
 				index := index - 1
 			end
 			Result.append(" ]")
 		end
 
+		item_val (a_item: separate G): STRING
+			do
+				Result := ""
+				if attached a_item as l_item  then
+					create Result.make_from_separate (l_item.out)
+				end
+			end
+
 feature {NONE} -- Implementation
 
 		queue : ARRAYED_LIST [G]
+
 
 end

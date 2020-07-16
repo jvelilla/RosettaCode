@@ -16,7 +16,6 @@
 			<concurrency support="scoop" use="scoop"/>
 			<void_safety support="transitional" use="transitional"/>
 		</capability>
-		<precompile name="base_pre" location="$ISE_PRECOMP\base-scoop-safe.ecf"/>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 	</target>
 	<target name="all_examples" extends="example">

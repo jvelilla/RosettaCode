@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Immutable complex"
 
 class
@@ -51,19 +51,19 @@ feature -- Operations
 			create Result.make (real + other.real, imag + other.imag)
 		end
 
-	minus alias "-" (other: like Current): like Current
+	minus alias "-" alias "−" (other: like Current): like Current
 			-- Result of subtracting `other'
 		do
 			create Result.make (real - other.real, imag - other.imag)
 		end
 
-	product alias "*" (other: like Current): like Current
+	product alias "*" alias "×" (other: like Current): like Current
 			-- Product by `other'
 		do
 			create Result.make (real * other.real - imag * other.imag, imag * other.real + real * other.imag)
 		end
 
-	quotient alias "/" (other: like Current): like Current
+	quotient alias "/" alias "÷"  (other: like Current): like Current
 			-- Division by `other'
 		local
 			a, b, c, d: REAL
@@ -86,7 +86,7 @@ feature -- Operations
 			Result := Current
 		end
 
-	opposite alias "-": like Current
+	opposite alias "-" alias "−": like Current
 			-- Unary minus
 		do
 			create Result.make (- real, - imag)

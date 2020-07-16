@@ -40,7 +40,7 @@ feature -- Access
 			Result := 1 / (k * k)
 		end
 
-	sum_until (s: FUNCTION [ANY, TUPLE [INTEGER], REAL_64]; n: INTEGER): REAL_64
+	sum_until (s: FUNCTION [TUPLE [INTEGER], REAL_64]; n: INTEGER): REAL_64
 			-- sum of the 'n' first terms of 's'
 		require
 			n_positive: n > 0
