@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-16-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-16-0 http://www.eiffel.com/developers/xml/configuration-1-16-0.xsd" name="rosettacode" uuid="07917FA5-3FE7-4C0A-A4D8-EF680213B19B">
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-21-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-21-0 http://www.eiffel.com/developers/xml/configuration-1-21-0.xsd" name="rosettacode" uuid="07917FA5-3FE7-4C0A-A4D8-EF680213B19B">
 	<target name="example">
 		<file_rule>
 			<exclude>/.git$</exclude>
@@ -7,10 +7,12 @@
 			<exclude>/CVS$</exclude>
 			<exclude>/EIFGENs$</exclude>
 		</file_rule>
-		<option warning="true" full_class_checking="true" is_attached_by_default="true" is_obsolete_routine_type="true" syntax="standard">
+		<option warning="warning" full_class_checking="true" is_attached_by_default="true" is_obsolete_routine_type="true" syntax="standard" manifest_array_type="mismatch_warning">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
 		<setting name="enforce_unique_class_names" value="true"/>
+		<setting name="total_order_on_reals" value="true"/>
+		<setting name="dead_code_removal" value="feature"/>
 		<capability>
 			<catcall_detection support="none"/>
 			<concurrency support="scoop" use="scoop"/>
@@ -20,166 +22,211 @@
 	</target>
 	<target name="all_examples" extends="example">
 		<root class="ALL_EXAMPLES" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<library name="eel" location="$ISE_LIBRARY\contrib\library\text\encryption\eel\eel-safe.ecf"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="boolean" extends="example">
 		<root class="BOOLEAN_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="dot_product" extends="example">
 		<root class="DOT_PRODUCT_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="fork_example" extends="example">
 		<root class="FORK_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="factorial" extends="example">
 		<root class="FACTORIAL_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="hailstone_sequence_example" extends="example">
 		<root class="HAILSTONE_SEQUENCE_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="horners" extends="example">
 		<root class="HORNER_RULE_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="lehmer" extends="example">
 		<root class="LUCAS_LEHMER_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="epoch" extends="example">
 		<root class="EPOCH_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="readfile" extends="example">
 		<root class="READ_SPECIFIC_LINE_FILE_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="complexnumber" extends="example">
 		<root class="COMPLEX_NUMBER_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="hofstadter" extends="example">
 		<root class="HOFSTADTER_SEQUENCE_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="charactermatching" extends="example">
 		<root class="CHARACTER_MATCHING_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="formatnumeric" extends="example">
 		<root class="FORMATED_NUMERIC_OUTPUT" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="sha" extends="example">
 		<root class="SHA_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<library name="eel" location="$ISE_LIBRARY\contrib\library\text\encryption\eel\eel-safe.ecf"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="sudoku" extends="example">
 		<root class="SUDOKU_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="ackerman" extends="example">
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="symetric" extends="example">
 		<root class="SYMETRIC_DIFFERENCE_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="letterfrequency" extends="example">
 		<root class="LETTER_FREQUENCY_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="repeatstring" extends="example">
 		<root class="REPEAT_STRING_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="sumofsquares" extends="example">
 		<root class="SUM_OF_SQUARES_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="mutualrecursion" extends="example">
 		<root class="MUTUAL_RECURSION_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="queuedefinition" extends="example">
 		<root class="QUEUE_DEFINITION_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="substring" extends="example">
 		<root class="SUBSTRING_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="leapyear" extends="example">
 		<root class="LEAP_YEAR_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="tokenizestring" extends="example">
 		<root class="TOKENIZE_STRING_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="stringcase" extends="example">
 		<root class="STRING_CASE_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="evenodd" extends="example">
 		<root class="EVEN_ODD_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="gcd" extends="example">
 		<root class="GCD_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="doors" extends="example">
 		<root class="DOORS_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="formatednumber" extends="example">
 		<root class="FORMATED_NUMERIC_OUTPUT_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="setexample" extends="example">
 		<root class="SET_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="readfilelinebyline" extends="example">
 		<root class="READ_FILE_LINE_BY_LINE_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="environmentvariable" extends="example">
 		<root class="ENVIRONMENT_VARIABLES_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="arithmeticmean" extends="example">
 		<root class="ARITHMETIC_MEAN_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="funtiondefinition" extends="example">
 		<root class="FUNCTION_DEFINITION_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="readentirefile" extends="example">
 		<root class="READ_ENTIRE_FILE_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="stripsetcharsstring" extends="example">
 		<root class="STRIP_CHARACTERS_STRING_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="sum_of_series" extends="example">
 		<root class="SUM_OF_SERIES" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="modular_inverse" extends="example">
+		<root class="MODULAR_INVERSE_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 	<target name="fifteen_puzzle" extends="example">
 		<root class="FIFTEEN_PUZZLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<capability>
 			<catcall_detection support="none"/>
 			<concurrency support="scoop"/>
@@ -190,6 +237,7 @@
 	</target>
 	<target name="void_value" extends="example">
 		<root class="VOID_VALUE_EXAMPLE" feature="make"/>
+		<setting name="total_order_on_reals" value="false"/>
 		<cluster name="src" location=".\src\" recursive="true"/>
 	</target>
 </system>
